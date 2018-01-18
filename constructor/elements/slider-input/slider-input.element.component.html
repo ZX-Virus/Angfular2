@@ -1,0 +1,10 @@
+<nouislider 
+  [connect]="true" 
+  [min]="data.min" 
+  [max]="data.max" 
+  [step]="data.step ? data.step : 1" 
+  [(ngModel)]="data.value" 
+  (ngModelChange)="onChange($event)" 
+  class="slider slider-info"
+>
+</nouislider>

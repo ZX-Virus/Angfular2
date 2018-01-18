@@ -1,0 +1,76 @@
+<ul class="added-document-list">
+  <li
+    *ngIf="!data.notEditable"
+    class="added-document-btn"
+    (click)="addDocument()"
+    data-toggle="modal" data-target="#documentModal"
+  >
+    <!--Кнопка-->
+    <div class="form-group form-file-upload is-empty add-document-input">
+      <span class="material-input"></span>
+    </div>
+    <span class="added-document-icon"></span>
+    <!--Иконка кнопки-->
+    <span class="added-document-text">Добавить</span>
+    <!--Текст кнопки-->
+  </li>
+
+  <li
+    class="added-document-block"
+    *ngFor="let item of data.value; let i = index"
+    >
+    <!--Блок с картинкой-->
+    <span class="added-img-document-container">
+      <img
+        [src]="data.url+item.imgName"
+        class="img-resposnive"
+      ><!--Картинка-->
+    </span>
+
+    <h4 class="document-name">{{item.name}}</h4>
+    <!--Название блока-->
+
+    <div class="ceretificate-description-blocks">
+      <div class="ceretificate-description-block">
+        <!--Строка с характеристиками-->
+        <span class="document-description-label">Кем выдан:</span>
+        <span class="document-description-text">{{item.nameIssued}}</span>
+      </div>
+
+      <div class="ceretificate-description-block">
+        <!--Строка с характеристиками-->
+        <span class="document-description-label">Действителен до:</span>
+        <span class="document-description-text">{{item.dateOff}}</span>
+      </div>
+    </div>
+
+    <ul
+      *ngIf="!data.notEditable"
+      class="edit-block"
+    >
+      <li
+        data-toggle="modal"
+        data-target="#documentModal"
+        (click)="editDocumentInModal(item, i)"
+      >
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+        Редактировать
+      </li>
+      <li
+        (click)="removeDocumentInModal(i)"
+      >
+        <i class="fa fa-times" aria-hidden="true"></i>
+        Удалить
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!--===================================Модальное окно===========================-->
+
+<document-modal
+  #documentModal
+  [data]="data"
+  [item]="selectedDocument"
+>
+</document-modal>

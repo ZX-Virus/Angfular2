@@ -1,0 +1,67 @@
+<div>
+  <div class="btn-group select-element "
+    dropdown
+  >
+    <ng-container
+      *ngIf="data.mode != 'DropInput'"
+    >
+      <button
+        dropdownToggle
+        type="button"
+        class="btn btn-transparent dropdown-toggle"
+        *ngIf="data.name"
+        (click)="filterChange($event)"
+        >
+          <div *ngIf="!data.value">
+            {{ data.name }}
+          </div>
+          <div *ngIf="data.value" class="default-btn-styles">
+            <span
+              [ngClass]="data.mode == 'overflow' ? 'overflow-name' : '' "
+            >
+              {{ data.selectedItem.name }}
+            </span>
+          </div>
+          <span class="caret"></span>
+      </button>
+    </ng-container>
+
+    <div 
+      class="form-group drop-input"
+      *ngIf="data.mode == 'DropInput'"
+      >
+      <input
+        type="text"
+        [(ngModel)]="filterStr"
+        (change)="filterChange($event)"
+        (click)="filterChange($event)"
+        (focus)="filterChange($event)"
+        (keyup)="filterChange($event)"
+        [placeholder]="data.placeholder"
+        class="form-control"
+        dropdownToggle/>
+    </div>
+
+    <ul
+      *dropdownMenu
+       class="dropdown-menu"
+       [ngClass]="data.mode == 'withCheckBoxes' ? 'ul-container-checkbox' : ''"
+    >
+      <ng-container *ngFor="let item of filteredList">
+        <li
+          role="menuitem"
+          (click)="selectItem(item)"
+        >
+          <span class="dropdown-item" >
+            <div *ngIf="data.mode == 'withCheckBoxes'">
+              <check-box-element [data]="item.dataCheckbox">
+              </check-box-element>
+            </div>
+            {{ item.name }}
+          </span>
+        </li>
+      </ng-container>
+    </ul>
+
+  </div>
+</div>

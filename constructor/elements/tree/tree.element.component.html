@@ -1,0 +1,15 @@
+<div style="position: relative;">
+  <button
+    [ngClass]="data.treeShow ? 'rotate' : ''"
+    class="btn btn-header-tree"
+    (click)='data.treeShow = !data.treeShow'
+  >
+    {{ (data.value.name) ? (data.nameNode + data.value.name) : data.nameNodeNotSelected }}
+  </button>
+  <tree-root
+    class="header-tree"
+    [ngClass]="data.treeShow ? 'tree-show-visible' : 'tree-show-hidden'"
+    [nodes]="data.nodes"
+    (activate)="activateTree($event)"
+  ></tree-root>
+</div>

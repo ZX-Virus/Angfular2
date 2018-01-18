@@ -1,0 +1,24 @@
+<!--<span
+  *ngIf="data.description"
+  class="fw-light"
+>
+  {{data.description}}
+</span>
+<input
+  *ngIf="data.mode"
+  type="number"
+  [(ngModel)]="data.value"
+> -->
+
+<div
+  *ngIf="!data.mode"
+  class="form-group"
+  style="max-width: none; "
+>
+  <input
+    type="number"
+    class="form-control"
+    [(ngModel)]="data.value"
+    [placeholder]="data.placeholder ? data.placeholder : ''"
+  >
+</div>

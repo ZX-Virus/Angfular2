@@ -1,0 +1,48 @@
+<div
+  *ngIf="data.mode == 'OnlyText'"
+  class="offer-change-btn"
+  (click)="data.eventProcessor(data.vm, data.idElement)"
+>
+  {{data.name}}
+</div>
+
+<div
+  *ngIf="data.mode == 'Add'"
+  class="offer-change-btn"
+  (click)="data.eventProcessor(data.vm, data.idElement)"
+>
+  <span class="add-charact">
+  </span>
+</div>
+
+<button
+  *ngIf="!data.mode && !data.disabled"
+  class="btn btn-rose simple-btn"
+  (click)="data.eventProcessor(data.vm, data.idElement)"
+>
+  {{data.name}}
+</button>
+
+<button
+  *ngIf="!data.mode && data.disabled"
+  class="btn btn-default company-reg-chi-btn"
+  (click)="data.eventProcessor(data.vm, data.idElement)"
+>
+  {{data.name}}
+</button>
+
+<i
+  class="fa fa-times delete-btn "
+  *ngIf="data.mode == 'del'"
+  (click)="clickDelBtn()"
+  aria-hidden="true"
+  >
+  {{data.name}}
+</i>
+
+<span
+  *ngIf="data.mode == 'addTextBtn'"
+  class="add-charact-small"
+  >
+  {{data.name}}
+</span>

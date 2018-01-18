@@ -1,0 +1,15 @@
+<span style="display: inline-block;" [ngClass]="data.textClass? data.textClass : 'fw-light'">
+  {{data.value}}
+  <sup style="font-size: 10px;">
+    {{data.sup}}
+  </sup>
+  <i
+    class="fa fa-question-circle fa-question-tooltip"
+    [ngClass]="(data.addTooltip && data.TooltipPosition && data.TooltipTitle)?'':'hidden'"
+    aria-hidden="true"
+    data-toggle="tooltip"
+    [attr.data-placement]="data.TooltipPosition"
+    [attr.data-original-title]="data.TooltipTitle"
+  >
+  </i>
+</span>

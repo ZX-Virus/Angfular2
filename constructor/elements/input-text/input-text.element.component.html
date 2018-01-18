@@ -1,0 +1,45 @@
+<div
+  *ngIf="!data.mode"
+  class="form-group"
+  style="max-width: none;"
+>
+  <input
+    type="text"
+    [disabled]="data.disabled"
+    class="form-control"
+    [(ngModel)]="data.value"
+    [placeholder]="data.placeholder?data.placeholder:''"
+  >
+</div>
+
+
+<div
+  *ngIf="data.mode === 'textarea'"
+  class="form-group mg0"
+  style="max-width: none;"
+>
+  <textarea
+    class="form-control"
+    [disabled]="data.disabled"
+    [placeholder]="data.placeholder?data.placeholder:''"
+    [rows]="data.rows"
+    [(ngModel)]="data.value"
+  ></textarea>
+</div>
+
+<div
+  *ngIf="data.mode === 'animateInput'"
+  class="form-group label-floating"
+  style="max-width: none;"
+>
+  <label class="control-label">
+    {{data.placeholder}}
+  </label>
+  <input
+    type="text"
+    [disabled]="data.disabled"
+    class="form-control"
+    [(ngModel)]="data.value"
+  >
+  <span class="material-input"></span>
+</div>

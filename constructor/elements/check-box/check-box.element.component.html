@@ -1,0 +1,22 @@
+<div
+  class="checkbox price-formating-checkbox"
+>
+  <label>
+    <input
+      type="checkbox"
+      [(ngModel)]="data.checked"
+      name="optionsCheckboxes"
+      (change)="changeCheckBox()"
+    >
+    {{data.name}}
+    <i
+      class="fa fa-question-circle fa-question-tooltip"
+      *ngIf="data.addTooltip"
+      aria-hidden="true"
+      data-toggle="tooltip"
+      [attr.data-placement]="data.TooltipPosition"
+      [attr.data-original-title]="data.TooltipTitle"
+      >
+    </i>
+  </label>
+</div>

@@ -1,0 +1,12 @@
+.category-btn-select {
+  width: 100%; }
+  .category-btn-select .bootstrap-select.btn-group .dropdown-menu {
+    display: none; }
+    .category-btn-select .bootstrap-select.btn-group .dropdown-menu button {
+      text-transform: none;
+      color: red; }
+      .category-btn-select .bootstrap-select.btn-group .dropdown-menu button .caret {
+        position: absolute;
+        top: 8px; }
+
+/*# sourceMappingURL=dropdown-list.element.component.css.map */

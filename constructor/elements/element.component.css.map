@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cAAc;EAEV,SAAS,EAAE,CAAC",
+"sources": ["element.component.sass"],
+"names": [],
+"file": "element.component.css"
+}

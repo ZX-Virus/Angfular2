@@ -1,0 +1,36 @@
+.offer-change-btn {
+  font-size: 14px;
+  text-decoration: none;
+  color: #f97806;
+  cursor: pointer; }
+  .offer-change-btn:hover {
+    text-decoration: none;
+    color: #f97806; }
+  .offer-change-btn:active {
+    text-decoration: none;
+    color: #f97806; }
+  .offer-change-btn:focus {
+    text-decoration: none;
+    color: #f97806; }
+
+.simple-btn {
+  text-transform: none; }
+
+.add-charact {
+  cursor: pointer;
+  font-size: 14px;
+  color: #f97806; }
+  .add-charact:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../../assets/img/sprite.png);
+    background-position: 0 -426px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+    margin-right: 5px; }
+
+/*# sourceMappingURL=button.element.component.css.map */

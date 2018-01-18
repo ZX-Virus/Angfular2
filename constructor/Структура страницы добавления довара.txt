@@ -1,0 +1,314 @@
+formData = [
+      {
+        joint: false, /* блоки в строке слитные? */
+        blocks: [
+          {
+            id: 'product', /* идентификатор блока - нужен чтобы взять данные другим блоком */
+            groupID: 1, /* группировка блоков в строке, если groupID для разных блоков совпадает - блоки будут в одной строке располагаться */
+            showMinimize: false, /* отображение кнопки для минимизации блока */
+            props: [/* props - список строк */
+              {
+                elements: [/* элементы в строке */
+                  { type: 'InputText',
+                    name: 'Наименование',
+                    value: ''
+                  }
+                ]
+              },
+              {
+                elements: [
+                  { type: 'DropdownList',
+                    name: 'Выберите категорию',
+                    value: '',
+                    tree: {
+                      root: [
+                        { id: 1,
+                          name: 'Плёнки'
+                        },
+                        { id: 2,
+                          name: 'Доски'
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+            ]
+          },
+          {
+            direction: 'vert',
+            groupID: 1,
+            showMinimize: false,
+            props: [
+              {
+                elements: [
+                  {
+                    name: 'Описание',
+                    value: '',
+                    type: 'InputText'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      { name: 'Основные характеристики',
+        showMinimize: false,
+        relation: [{
+          name: 'Предложить изменение характеристик в категории',
+          link: 'product:1' /* берем данные с блока 'product' из props[1] */
+        }],
+        props: [
+          { elements: [
+            { name: 'Наименование',
+              value: 'Длина',
+              type: 'Text'
+            },
+            { name: 'Значение',
+              value: '20,5',
+              type: 'InputText'
+            },
+            { name: 'Ед. измерения',
+              value: 'м',
+              type: 'InputText'
+            }]
+          },
+          { elements: [
+            { name: 'Наименование',
+              value: 'Ширина',
+              type: 'Text'
+            },
+            { name: 'Значение',
+              value: '',
+              type: 'InputText'
+            },
+            { name: 'Ед. измерения',
+              value: 'кг',
+              type: 'InputText'
+            }]
+          },
+          { elements: [
+            { name: 'Наименование',
+              value: 'Объем',
+              type: 'Text'
+            },
+            { name: 'Значение',
+              value: '',
+              type: 'InputText'
+            },
+            { name: 'Ед. измерения',
+              value: '',
+              type: 'InputText'
+            }]
+          },
+          { elements: [
+            { name: 'Наименование',
+              value: 'Цвет корпуса',
+              type: 'Text'
+            },
+            { name: 'Значение',
+              value: '',
+              type: 'InputText'
+            },
+            { name: 'Ед. измерения',
+              value: '',
+              type: 'InputText'
+            }]
+          },
+          { elements: [ /* values - подразумевает список в строке */
+            { name: 'Наименование характеристики',
+              value: 'Вес(нетто)',
+              type: 'Text'
+            },
+            { name: 'Значение',
+              value: '',
+              type: 'InputText'
+            },
+            { name: 'Ед. измерения',
+              value: '',
+              type: 'InputText'
+            }]
+          }
+        ]
+      },
+      { name: 'Дополнительные характеристики',
+        showMinimize: false,
+        editableList: true, // список свойств
+        addText: 'Добавить характеристику',
+        delHint: 'Удалить характеристику',
+        props: [
+          { elements:[
+            { type: 'editElements',
+              template: [
+                { name: 'Наименование характеристики',
+                  value: '',
+                  type: 'InputText'
+                },
+                { name: 'Значение количеств',
+                  value: '',
+                  type: 'InputText'
+                },
+                { name: 'Ед.измерения',
+                  value: '',
+                  type: 'InputText'
+                }],
+              values: [
+                { elements: [
+                  { name: 'Наименование характеристики',
+                    value: 'Объем встроенной памяти (постоянной)',
+                    type: 'InputText'
+                  },
+                  { name: 'Значение количеств',
+                    value: '',
+                    type: 'InputText'
+                  },
+                  { name: 'Ед.измерения',
+                    value: '',
+                    type: 'InputText'
+                  }]
+                },
+                { elements: [
+                  { name: 'Наименование характеристики',
+                    value: '',
+                    type: 'InputText'
+                  },
+                  { name: 'Значение количеств',
+                    value: '',
+                    type: 'InputText'
+                  },
+                  { name: 'Ед.измерения',
+                    value: '',
+                    type: 'InputText'
+                  }]
+                }
+              ]
+            }
+          ]}
+        ]
+      },
+      { showMinimize: false,
+        editableList: true, // список свойств
+        props: [
+          { elements: [
+              { type: 'ImageListEditor',
+                values: [
+                  { title: '', /*Наименование изображения или его подпись*/
+                    filename: '/imgLoaded/img1.png',
+                    data64: '', /* изображение в формате data64 */
+                  },
+                  { title: '',
+                    filename: '/imgLoaded/img2.png',
+                    data64: ''
+                  }
+                ],
+                newvalues: [
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      { showMinimize: false,
+        props: [
+          { elements: [
+              { type: 'Text',
+                name: 'От'
+              },
+              { type: 'InputText',
+                name: 'Значение',
+                value: ''
+              },
+              { type: 'Text',
+                name: 'До',
+                value: ''
+              },
+              { type: 'InputText',
+                name: 'Значение',
+                value: ''
+              },
+              { type: 'DropdownList',
+                name: 'Валюта',
+                values: [
+                  'Рубль',
+                  'Юань'
+                ],
+                value: ''
+              },
+              { type: 'DropdownList',
+                values: [
+                  'без НДС',
+                  'с НДС'
+                ],
+                value: ''
+              },
+              { type: 'DropdownList',
+                name: 'тара',
+                values: [
+                  'За упаковку',
+                  'За штуку'
+                ]
+              },
+            ]
+          },
+          { elements: [
+              { type: 'CheckBox',
+                name: 'Договорная'
+              },
+              { type: 'CheckBox',
+                name: 'Под заказ'
+              },
+            ]
+          }
+        ]
+      },
+      { showMinimize: false,
+        props: [
+          { elements: [
+              { type: 'Text',
+                name: 'Минимальная партия'
+              },
+              { type: 'InputText',
+                name: 'Мин. количество',
+                value: ''
+              },
+              { type: 'DropdownList',
+                name: 'Ед. измерения',
+                values: [
+                  'Рубль',
+                  'Юань'
+                ],
+                value: ''
+              }
+            ]
+          },
+          { elements: [
+              { type: 'Text',
+                name: 'От'
+              },
+              { type: 'InputNumber',
+                name: 'Кол-во',
+                value: ''
+              },
+              { type: 'Text',
+                name: 'До',
+                value: ''
+              },
+              { type: 'InputNumber',
+                name: 'Кол-во',
+                value: ''
+              },
+              { type: 'DropdownList',
+                name: 'Период',
+                values: [
+                  'В неделю',
+                  'В месяц'
+                ],
+                value: ''
+              }
+            ]
+          },
+        ]
+      },
+    ]
+  }

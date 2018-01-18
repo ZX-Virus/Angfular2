@@ -1,0 +1,77 @@
+<div
+  class="modal fade"
+  tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+  bsModal
+  #documentModal="bs-modal"
+  >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="idFormSubmit" action="#" method="post" enctype="multipart/form-data">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="hide()">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fileinput fileinput-new text-center modal-img-block" data-provides="fileinput">
+            <div class="fileinput-new thumbnail img-raised">
+              <img
+                *ngIf="data && data.url && item && item.imgName"
+                [src]="data.url + item.imgName"
+              >
+            </div>
+            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+            <div>
+              <span class="btn btn-raised btn-round btn-default btn-file">
+                <span class="fileinput-new">Новое изображение</span>
+                <span class="fileinput-exists">Изменить</span>
+                <input type="file" accept="image/*" (change)="inputFileChange($event)">
+              </span>
+              <a href="#pablo"
+                 class="btn btn-danger btn-round fileinput-exists"
+                 data-dismiss="fileinput"
+              >
+                <i class="fa fa-times"></i>
+                Удалить
+              </a>
+            </div>
+          </div>
+
+          <div class="form-group form-modal-block">
+            <label class="form-label">Наименование:</label>
+            <input
+              name="name"
+              type="text"
+              [(ngModel)]="item.name" class="form-control value"
+            />
+          </div>
+
+          <div class="form-group form-modal-block">
+            <label class="form-label">Кем выдан:</label>
+            <input
+              name="nameIssued"
+              type="text"
+              [(ngModel)]="item.nameIssued" class="form-control value"
+            />
+          </div>
+
+          <div class="form-group form-modal-block">
+            <label class="form-label">Действителен до:</label>
+            <input
+              name="dateOff"
+              type="date"
+              [(ngModel)]="item.dateOff" class="form-control value"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="submit_button" type="submit" value="1" class="btn btn-rose" (click)="hide(true)">Сохранить</button>
+          <div class="btn btn-rose" style="margin: 0" (click)="hide()">Отмена</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

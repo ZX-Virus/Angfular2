@@ -1,0 +1,60 @@
+.minimize {
+  position: absolute;
+  top: 24px;
+  right: 34px;
+  font-size: 20px;
+  transform: rotate(0deg);
+  transition: transform 0.25s; }
+
+.fw-light {
+  font-family: "RobotoLight", sans-serif; }
+
+.title-descr {
+  font-size: 14px;
+  color: #aaa; }
+
+.add-charact {
+  cursor: pointer;
+  font-size: 14px;
+  color: #f97806; }
+  .add-charact:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../../assets/img/sprite.png);
+    background-position: 0 -426px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
+    margin-right: 5px; }
+
+.transparent-wrap {
+  max-width: 495px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-end; }
+
+.transparent-block {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center; }
+  .transparent-block element {
+    flex-grow: 1; }
+
+.transparent-block-end {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 100%; }
+  .transparent-block-end element {
+    flex-grow: 1; }
+
+/*# sourceMappingURL=row-block.component.css.map */

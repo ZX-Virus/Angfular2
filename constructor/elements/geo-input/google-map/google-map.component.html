@@ -1,0 +1,37 @@
+<div
+  class="modal fade bg_black_opacity_50"
+  bsModal
+  #googleMapModal="bs-modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="googleMapModalLabel"
+  aria-hidden="true"
+  (onHide)="hide($event)"
+>
+  <div class="modal-dialog google-map-modal" style="width: 90vw;">
+    <div
+      class="modal-content"
+      *ngIf="position && position.geometry"
+    >
+      <div
+        [ngClass]="(position && position.geometry && position.geometry.location)?'':'hidden'"
+        class="modal-body madal-thank"
+      >
+        <h3 class="fw-light">
+          Выбраное положение на карте
+        </h3>
+        <ngui-map
+          [center]="position && position.formatted_address"
+        >
+          <marker [position]="[position.geometry.location.lat, position.geometry.location.lng]"></marker>
+        </ngui-map>
+        <button
+          class="btn btn-rose"
+          (click)="hide()"
+        >
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+@import "../../../assets/sass/_vars"
+
+// showMinimaze styles start
+.minimize
+  position: absolute
+  top: 24px
+  right: 34px
+  font-size: 20px
+  transform: rotate(0deg)
+  transition: transform 0.25s
+  z-index: 1
+
+.minimize.rotate
+  transform: rotate(180deg)
+  transition: transform 0.25s
+// showMinimaze styles end
+.fw-light
+  font-family: $dl
+
+.title-descr
+  font-size: 14px
+  color: #aaa
+
+.add-charact
+  cursor: pointer
+  font-size: 14px
+  color: #f97806
+  &:before
+    content: ''
+    display: inline-block
+    width: 20px
+    height: 20px
+    background-image: url(../../../assets/img/sprite.png)
+    background-position: 0 -426px
+    background-repeat: no-repeat
+    position: relative
+    top: 5px
+    margin-left: 10px
+    margin-right: 5px
+.add-charact.full-width
+  width: inherit
+
+// default classes
+.transparent-wrap
+  max-width: 495px
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-content: flex-start
+.transparent-wrap-max-w
+  max-width: 100%
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-content: flex-start
+
+.transparent-wrap-end
+  max-width: 495px
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-content: flex-end
+
+.transparent-block
+  display: flex
+  align-items: flex-start
+  align-content: flex-start
+  flex-wrap: nowrap
+  width: 100%
+  align-items: center
+  element
+    flex-grow: 1
+
+// .content-wrap-class
+//   display: flex
+//   flex-direction: column
+//   height: 100%
+
+// custom classes
+.transparent-block-end
+  display: flex
+  align-items: flex-end
+  flex-wrap: wrap
+  width: 100%
+  element
+    flex-grow: 1
+

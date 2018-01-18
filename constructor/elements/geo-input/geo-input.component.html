@@ -1,0 +1,12 @@
+<div>
+  <ng4geo-autocomplete
+    (componentCallback)="autoCompleteCallback1($event)"
+    [userSettings]="userSettings"
+  >
+  </ng4geo-autocomplete>
+</div>
+
+<google-map-modal
+  #googleMapModal
+  [position]="selectedData"
+></google-map-modal>

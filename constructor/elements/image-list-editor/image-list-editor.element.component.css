@@ -1,0 +1,87 @@
+.added-photos-list {
+  display: flex; }
+  .added-photos-list li {
+    display: flex;
+    flex-direction: column;
+    width: 124px;
+    height: 124px;
+    position: relative;
+    margin: 0 4px; }
+    .added-photos-list li:first-child {
+      margin-left: 0; }
+  .added-photos-list .added-photo-btn {
+    background-color: #fff;
+    border: 2px dashed #e5e5e5;
+    cursor: pointer;
+    overflow: hidden; }
+    .added-photos-list .added-photo-btn .add-image-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0; }
+    .added-photos-list .added-photo-btn .added-photo-text {
+      font-size: 14px;
+      font-family: "RobotoLight", sans-serif;
+      text-align: center;
+      line-height: 18px;
+      width: 100%;
+      color: #3c4858;
+      text-align: center; }
+    .added-photos-list .added-photo-btn .added-photo-icon {
+      display: block;
+      cursor: pointer;
+      margin: 20px auto 15px auto;
+      width: 27px;
+      height: 27px;
+      background-image: url(../../../../assets/img/sprite.png);
+      background-repeat: no-repeat;
+      background-position: 0 -473px; }
+  .added-photos-list .added-photo-img:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #ececec;
+    border-radius: 4px; }
+  .added-photos-list .added-photo-img img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto; }
+  .added-photos-list .added-photo-img .added-photo-delete {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.65);
+    border: 1px solid #ececec; }
+    .added-photos-list .added-photo-img .added-photo-delete .delete-photo-text {
+      font-size: 14px;
+      font-family: "RobotoLight", sans-serif;
+      text-align: center;
+      line-height: 18px;
+      display: inline-block;
+      color: #fff;
+      text-align: center; }
+    .added-photos-list .added-photo-img .added-photo-delete .delete-photo-icon {
+      display: block;
+      cursor: pointer;
+      margin: 20px auto 15px auto;
+      width: 27px;
+      height: 27px;
+      background-image: url(../../../../assets/img/sprite.png);
+      background-repeat: no-repeat;
+      background-position: 0 -503px; }
+  .added-photos-list .added-photo-img:hover .added-photo-delete {
+    opacity: 1;
+    visibility: visible; }
+
+/*# sourceMappingURL=image-list-editor.element.component.css.map */

@@ -1,0 +1,40 @@
+<ul class="added-photos-list">
+  <ng-container *ngFor="let item of data.values">
+    <li
+      *ngIf="!item.removed"
+      (click)="onDeleteClick(item)"
+      class="added-photo-img"
+    >
+      <img
+        [src]="data.url + item.name"
+        alt="img"
+        class="img-responsive"
+      >
+      <div
+        *ngIf="data.editable"
+        class="added-photo-delete"
+      >
+        <span class="delete-photo-icon"></span>
+        <span class="delete-photo-text">
+          {{data.titleRemove?data.titleRemove:'Удалить'}}
+        </span>
+      </div>
+    </li>
+  </ng-container>
+
+  <li
+    *ngIf="showAddImage(data.editable, data.values, data.maxNumImages)"
+    class="added-photo-btn"
+  >
+    <div class="form-group form-file-upload is-empty is-fileinput add-image-input">
+      <form id="idFormSubmit" action="#" method="post" enctype="multipart/form-data">
+        <input type="file" multiple accept="image/*" (change)="onFileChange($event)">
+      </form>
+      <span class="material-input"></span>
+    </div>
+    <span class="added-photo-icon"></span>
+    <span class="added-photo-text">
+      {{data.titleAdd?data.titleAdd:'Добавить'}}
+    </span>
+  </li>
+</ul>

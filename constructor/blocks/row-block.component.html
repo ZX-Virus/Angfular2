@@ -1,0 +1,171 @@
+<div
+  *ngIf="data && data.blocks && data.blocks.length && !data.joint"
+  [ngClass]=" (data.blocks.length > 1) ? 'flex-floating' : 'flex-start-container' "
+>
+  <div
+    *ngFor="let block of data.blocks"
+    class="gray-container"
+    [ngClass]="block.minimized ? 'align-s-st' : ''"
+  >
+    <i class="fa fa-angle-up minimize"
+      aria-hidden="true"
+      [ngClass]="(block.showMinimize ? 'show' : 'hide') + ' ' + (block.minimized ? 'rotate' : '' )"
+      (click)="hideGrayContainerBlock(block)"
+    >
+    </i>
+    <h4
+      *ngIf="block.name"
+      class="fw-light"
+    >
+      {{block.name}}
+      <span
+        *ngIf="block.name2"
+        class="title-descr"
+      >
+        {{block.name2}}
+      </span>
+      <i
+        class="fa fa-question-circle fa-question-tooltip"
+        *ngIf="block.addTooltip && block.TooltipPosition && block.TooltipTitle"
+        aria-hidden="true"
+        data-toggle="tooltip"
+        [attr.data-placement]="block.TooltipPosition"
+        [attr.data-original-title]="block.TooltipTitle"
+        >
+      </i>
+      <span
+        *ngIf="block.addTextBtn && block.template && (block.templateMode !== 'showDown') "
+        class="add-charact"
+        (click)="addTemplate(block)"
+      >
+        {{block.addTextBtn}}
+      </span>
+    </h4>
+    <div
+      [ngClass]="block.contentWrapClass ? block.contentWrapClass : ''"
+      >
+      <div
+        *ngFor="let row of block.props; let i = index"
+        style="display:flex"
+        [style.flex-wrap]="block.flexWrap ? block.flexWrap : ''"
+        [ngClass]="(block.minimized ? 'hidden' : '') + ' ' + (block.rowClass ? block.rowClass : 'tradding-opp-row')"
+      >
+        <element
+          class="value-input add-product-value-input"
+          *ngFor="let element of row.elements"
+          [data]="element"
+          [ngClass]="(row.visible === false) ? 'hidden' : ''"
+          [style.width]="element.width ? element.width : 'inherit'"
+          [style.margin]="element.margin ? element.margin : '0'"
+        >
+        </element>
+
+        <span
+          *ngIf="row.addTextBtn && row.template"
+          class="add-charact full-width"
+          (click)="addTemplateRow(row, block, i)"
+        >
+          {{row.addTextBtn}}
+        </span>
+      </div>
+      <span
+        *ngIf="block.addTextBtn && block.template && (block.templateMode === 'showDown') "
+        class="add-charact"
+        (click)="addTemplate(block)"
+      >
+        {{block.addTextBtn}}
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div
+  *ngIf="data && data.blocks && data.blocks.length && data.joint"
+  [ngClass]=" !data.joint ? 'flex-floating' : 'flex-start-container' "
+  >
+  <div
+    class="gray-container"
+  >
+    <i class="fa fa-angle-up minimize"
+      aria-hidden="true"
+      [ngClass]="(data.showMinimize ? 'show' : 'hide') + ' ' + (data.minimized ? 'rotate' : '' )"
+      (click)="hideGrayContainer()"
+    >
+    </i>
+    <div
+      class="flex-floating"
+      >
+      <div
+        *ngFor="let block of data.blocks"
+        [ngClass]="block.parentClass ? block.parentClass : 'transparent-wrap'"
+      >
+
+      <h4
+          *ngIf="block.name"
+          class="fw-light"
+        >
+          {{block.name}}
+          <span
+            *ngIf="block.name2"
+            class="title-descr"
+          >
+            {{block.name2}}
+          </span>
+          <i
+            class="fa fa-question-circle fa-question-tooltip"
+            *ngIf="block.addTooltip"
+            aria-hidden="true"
+            data-toggle="tooltip"
+            [attr.data-placement]="block.TooltipPosition"
+            [attr.data-original-title]="block.TooltipTitle"
+            >
+          </i>
+
+          <span
+            *ngIf="block.addTextBtn && block.template && (block.templateMode !== 'showDown')"
+            class="add-charact"
+            (click)="addTemplate(block)"
+          >
+            {{block.addTextBtn}}
+          </span>
+        </h4>
+        <div
+          *ngFor="let row of block.props; let i = index"
+          [ngClass]="(block.childClass ? block.childClass : 'transparent-block ') + (data.minimized ? ' hidden' : '')"
+        >
+          <div
+            *ngFor="let element of row.elements"
+            [style.width]="element.width ? element.width : 'inherit'"
+            [style.margin]="element.margin ? element.margin : '0'"
+            >
+            <element
+              [data]="element"
+              style="width: 100%"
+              [ngClass]="(element.elementClass ? element.elementClass : 'value-input add-product-value-input') + ' ' + ((row.visible === false) ? 'hidden' : '') "
+            >
+            </element>
+          </div>
+
+          <span
+            *ngIf="row.addTextBtn && row.template"
+            class="add-charact full-width"
+            (click)="addTemplateRow(row, block, i)"
+          >
+            {{row.addTextBtn}}
+          </span>
+        </div>
+        <span
+          *ngIf="block.addTextBtn && block.template && (block.templateMode === 'showDown')"
+          class="add-charact"
+          (click)="addTemplate(block)"
+        >
+          {{block.addTextBtn}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="radio styled-radio">
+  <label *ngFor="let item of data.values"
+    [class]="data.horizontal ? 'radio-horzintal' : 'radio-vertical'">
+    <input
+      type="radio"
+      [checked] = "data.value == item.id"
+      [name]="data.groupName"
+      (change)="OnCheckRadio(item)"
+    >
+      <span class="fw-light" class="radio-name">{{item.name}}</span>
+  </label>
+</div>

@@ -1,0 +1,7 @@
+.checkbox.price-formating-checkbox label {
+  display: inline-block;
+  margin: 0 15px; }
+  .checkbox.price-formating-checkbox label:first-child {
+    margin-left: 0; }
+
+/*# sourceMappingURL=check-box.element.component.css.map */

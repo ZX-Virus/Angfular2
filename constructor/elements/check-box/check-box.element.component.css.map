@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,wCAAK;EACH,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,MAAM;EACd,oDAAa;IACX,WAAW,EAAE,CAAC",
+"sources": ["check-box.element.component.sass"],
+"names": [],
+"file": "check-box.element.component.css"
+}

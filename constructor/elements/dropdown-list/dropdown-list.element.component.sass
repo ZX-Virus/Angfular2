@@ -1,0 +1,83 @@
+.category-btn-select
+  width: 100%
+  .bootstrap-select.btn-group .dropdown-menu
+    display: none
+    button
+      text-transform: none
+      color: red
+      .caret
+        position: absolute
+        top: 8px
+.dropdown-menu
+  overflow: auto
+  max-height: 221px
+  width: 100%
+
+.select-element
+  height: 36px
+  margin: 0
+  padding: 0
+  width: 100%
+  top: 1px
+  button
+    position: relative
+    border-radius: 0
+    padding: 0
+    width: 100%
+    height: inherit
+    box-shadow: none
+    color: #acacac
+    font-family: 'RobotoRegular', sans-serif
+    font-weight: 400
+    background-image: linear-gradient(#f99300,#f99300),linear-gradient(#d2d2d2,#d2d2D2)!important
+    background-size: 0 2px, 100% 1px!important
+    background-repeat: no-repeat!important
+    background-position: center bottom, center calc(100% - 1px)!important
+    background-color: rgba(0, 0, 0, 0)!important
+    transition: background 0s ease-out!important
+    text-transform: none
+    text-align: left
+    font-size: 14px
+
+.default-btn-styles
+  color: #acacac
+  font-family: 'RobotoRegular', sans-serif
+  font-weight: 400
+      
+.select-element.open
+  button
+    background-image: linear-gradient(#f99300,#f99300),linear-gradient(#d2d2d2,#d2d2D2)!important
+    background-size: 100% 2px, 100% 1px!important
+    box-shadow: none!important
+    transition-duration: 0.3s!important
+    .caret
+      transform: rotate(180deg)
+
+.caret
+  position: absolute
+  right: 5px
+  top: 50%
+  margin-top: -2px
+  color: #acacac
+
+.ul-container-checkbox
+  width: 100%
+  max-height: 430px
+  overflow: auto
+  .dropdown-item
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+
+
+.overflow-name
+  width: 135px
+  overflow: hidden
+  text-overflow: ellipsis
+  display: block
+  padding-right: 12px
+
+.form-group.drop-input
+  top: 0
+  max-width: 100%
+  width: 100%!important

@@ -1,0 +1,88 @@
+.tree-show-hidden
+  opacity: 0
+  visibility: hidden
+  top: 56px
+
+.tree-show-visible
+  opacity: 1
+  visibility: visible
+  top: 36px
+
+.header-tree
+  position: absolute
+  padding: 5px
+  top: 56px
+  left: 0px
+  bottom: 0
+  width: 100%
+  background-color: #fff
+  height: 400px
+  z-index: 1
+  color: #000
+  border: 1px solid #DDE8E8
+  transition: opacity 0.5s ease, top 0.25s ease
+  font-size: 14px!important
+
+.tree-show-hidden
+  opacity: 0
+  visibility: hidden
+  top: 56px
+
+.tree-show-visible
+  opacity: 1
+  visibility: visible
+  top: 36px
+
+.btn-header-tree
+  margin: 0
+  height: 36px
+  line-height: 0
+  font-size: 14px
+  text-align: left
+  text-transform: none
+  background: transparent
+  color: #000
+  box-shadow: none
+  padding-left: 6px
+  transition: opacity 0.5s ease-in-out
+  padding: 0
+  width: 100%
+  position: relative
+  top: -3px
+  padding-left: 5px
+  &:before
+    content: ''
+    position: absolute
+    margin-top: -4px
+    top: 50%
+    right: 5px
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 5px 4px 0 4px
+    border-color: #000 transparent transparent transparent
+    transition: transform 0.25s ease
+  &:focus
+    background-color: transparent
+    color: #000
+  &:active
+    background-color: transparent
+    color: #000
+
+.btn-header-tree.rotate
+  &:before
+    content: ''
+    position: absolute
+    margin-top: -3px
+    top: 50%
+    right: 5px
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 5px 4px 0 4px
+    border-color: #000 transparent transparent transparent
+    transform: rotate(180deg)
+
+.node-content-wrapper
+  font-size: 14px
+

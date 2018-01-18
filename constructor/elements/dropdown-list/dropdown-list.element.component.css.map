@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB;EAClB,KAAK,EAAE,IAAI;EACX,+DAA0C;IACxC,OAAO,EAAE,IAAI;IACb,sEAAM;MACJ,cAAc,EAAE,IAAI;MACpB,KAAK,EAAE,GAAG;MACV,6EAAM;QACJ,QAAQ,EAAE,QAAQ;QAClB,GAAG,EAAE,GAAG",
+"sources": ["dropdown-list.element.component.sass"],
+"names": [],
+"file": "dropdown-list.element.component.css"
+}
